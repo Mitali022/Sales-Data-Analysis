@@ -6,7 +6,7 @@ The Sales Data Analysis System is a data analytics project developed to analyze 
 
 ## 🚀 Live Project
 
-https://mitali022.github.io/Amazon-Sales-Data-Analysis/
+https://mitali022.github.io/Sales-Data-Analysis/
 
 ## 🛠️ Technologies Used
 
