@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> Amazon Sales Analysis System</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#fd7640,#4a235a);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    background:white;
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* NAVBAR */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:50px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#6a0dad;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#555;
+    margin-left:30px;
+    font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.hero-text{
+    flex:1;
+    min-width:300px;
+}
+
+.hero-text h1{
+    font-size:55px;
+    color:#ff4f8b;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    color:#666;
+    line-height:32px;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+}
+
+.btn{
+    padding:12px 28px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.dashboard-btn{
+    background:#6a0dad;
+    color:white;
+}
+
+.insights-btn{
+    background:#6a0dad;
+    color:white;
+}
+
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* IMAGE */
+
+.hero-image{
+    flex:1;
+    text-align:center;
+    min-width:300px;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:500px;
+}
+
+/* FEATURES */
+
+.features{
+    margin-top:70px;
+}
+
+.features h2{
+    text-align:center;
+    color:#6a0dad;
+    margin-bottom:30px;
+    font-size:35px;
+}
+
+.feature-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.card{
+    width:220px;
+    background:#f8f8f8;
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    color:#6a0dad;
+    margin-bottom:10px;
+}
+
+/* TECHNOLOGY */
+
+.tech{
+    margin-top:60px;
+    text-align:center;
+}
+
+.tech h2{
+    color:#6a0dad;
+    margin-bottom:20px;
+}
+
+.tech p{
+    font-size:18px;
+    color:#555;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:50px;
+    text-align:center;
+    color:#666;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <div class="logo">
+            Sales Analytics
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Home</a>
+             <a href="#features">Features</a>
+        </div>
+
+    </div>
+
+    <!-- HERO SECTION -->
+
+    <div class="hero">
+
+        <div class="hero-text">
+
+            <h1>
+                Sales Data Analysis &
+                Management System
+            </h1>
+
+            <p>
+                Analyze Amazon sales trends, revenue growth,
+                product performance and regional insights
+                using Python and Power BI. This system helps
+                businesses make data-driven decisions through
+                visual analytics and reporting.
+            </p>
+
+            <div class="buttons">
+
+                <a href="dashboard.html" class="btn">View Dashboard</a>
+                 <a href="insights.html" class="btn">View Insights</a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <!-- Add image in same folder -->
+            <img src="analytics.jpg"
+            alt="Data Analysis">
+
+        </div>
+
+    </div>
+
+    <!-- FEATURES -->
+
+    <div class="features">
+         <div id="features" class="features">
+                    <h2>Project Features</h2>
+
+        <div class="feature-grid">
+
+            <div class="card">
+                <h3>📊 Sales Analysis</h3>
+                <p>Analyze revenue and trends.</p>
+            </div>
+
+            <div class="card">
+                <h3>📈 Dashboard</h3>
+                <p>Interactive Power BI reports.</p>
+            </div>
+
+            <div class="card">
+                <h3>🌍 Region Analysis</h3>
+                <p>Compare regional performance.</p>
+            </div>
+
+            <div class="card">
+                <h3>🏆 Product Insights</h3>
+                <p>Identify top-selling products.</p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+    <!-- TECHNOLOGY -->
+
+    <div class="tech">
+
+        <h2>Technologies Used</h2>
+
+        <p>
+            Python • Pandas • Power BI • HTML • CSS • JavaScript • PostgreSQL
+        </p>
+
+    </div>
+
+    <footer>
+        Developed by Mitali Chitranshi | MCA Major Project
+    </footer>
+
+</div>
+
+</body>
+</html>

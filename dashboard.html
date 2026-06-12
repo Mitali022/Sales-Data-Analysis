@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sales Data Analysis Dashboard</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:linear-gradient(to right,#fd7640,#27032cd0);
+            padding:25px;
+        }
+
+       
+        /* MAIN DASHBOARD */
+        
+
+        .dashboard{
+            width:95%;
+            margin:auto;
+        }
+
+        .main-title{
+            text-align:center;
+            color:white;
+            font-size:40px;
+            margin-bottom:15px;
+            font-weight:bold;
+        }
+
+        .title-line{
+            width:100px;
+            height:5px;
+            background:white;
+            margin:0 auto 40px;
+            border-radius:10px;
+        }
+
+
+     .dashboard-button-section{
+    width:70%;
+    margin:40px auto;
+    text-align:center;
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.dashboard-button-section h3{
+    color:#6a0dad;
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.dashboard-button-section p{
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+.dashboard-button-section button{
+    background:#6a0dad;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    font-size:20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.dashboard-button-section button:hover{
+    transform:scale(1.05);
+}
+    
+
+
+
+
+
+
+
+
+ .btn-container{
+    display:flex;
+    justify-content:center;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.download-btn{
+    background:linear-gradient(135deg,#0e0c0f,#9b59b6);
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    transition:0.3s;
+}
+
+.download-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+        /* ========================= */
+        /* CONTENT SECTION */
+        /* ========================= */
+
+        .content-section{
+            width:100%;
+            margin-top:70px;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+        }
+
+        /* ========================= */
+        /* SUMMARY BOX */
+        /* ========================= */
+
+        .summary-box{
+            width:78%;
+            background:#f8f8f8;
+            border-radius:28px;
+            padding:28px 35px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.25);
+            margin-bottom:70px;
+        }
+
+        .summary-title{
+            text-align:center;
+            color:#6a0dad;
+            font-size:30px;
+            margin-bottom:12px;
+            font-weight:bold;
+        }
+
+        /* DESIGN */
+
+        .summary-design{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:12px;
+            margin-bottom:40px;
+        }
+
+        .summary-design .line{
+            width:60px;
+            height:4px;
+            background:#b26dff;
+            border-radius:10px;
+        }
+
+        .summary-design .dot{
+            width:10px;
+            height:10px;
+            background:#b26dff;
+            border-radius:50%;
+        }
+
+        /* SUMMARY POINTS */
+
+        .summary-point{
+            display:flex;
+            align-items:flex-start;
+            gap:16px;
+            padding:18px 0;
+            border-bottom:1px solid #ddd;
+        }
+
+        .summary-point:last-child{
+            border-bottom:none;
+        }
+
+        /* ICON */
+
+        .summary-icon{
+            width:48px;
+            height:48px;
+            border-radius:24px;
+            background:#f0e5ff;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:32px;
+            flex-shrink:0;
+        }
+
+        /* TEXT */
+
+        .summary-text{
+            font-size:16px;
+            line-height:30px;
+            color:#222;
+        }
+
+        .highlight{
+            color:#6a0dad;
+            font-weight:bold;
+        }
+
+        /* ========================= */
+        /* INSIGHTS */
+        /* ========================= */
+
+        .insights-section{
+            width:90%;
+        }
+
+       .insight-title{
+    text-align:center;
+    color:white;
+    font-size:30px;
+    margin-bottom:10px;
+    font-weight:bold;
+}
+        /* DESIGN */
+
+        .insight-design{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:12px;
+            margin-bottom:45px;
+        }
+
+        .insight-design .line{
+            width:90px;
+            height:4px;
+            background:white;
+            border-radius:10px;
+        }
+
+        .insight-design .dot{
+            width:10px;
+            height:10px;
+            background:white;
+            border-radius:50%;
+        }
+
+        /* CARDS */
+
+        .insight-container{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+        .insight-card{
+    width:200px;
+    background:#f8f8f8;
+    border-radius:20px;
+    padding:22px 18px;
+    text-align:center;
+    box-shadow:0 6px 15px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+        .insight-card:hover{
+            transform:translateY(-6px);
+        }
+
+        /* CARD ICON */
+
+        .insight-card-icon{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#ede2ff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    margin-bottom:18px;
+    font-size:28px;
+}
+
+        /* CARD TEXT */
+
+        .insight-card p{
+    font-size:15px;
+    line-height:30px;
+    color:#222;
+}
+
+
+.back-btn{
+display:block;
+width:250px;
+margin:20px auto;
+text-align:center;
+text-decoration:none;
+background:linear-gradient(90deg,#1e103f,#9b59b6);
+color:white;
+padding:15px;
+border-radius:10px;
+font-weight:bold;
+}
+
+
+footer{
+    margin-top:50px;
+    text-align:center;
+    color:white;
+}
+
+    </style>
+
+</head>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+async function downloadPDF() {
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // HEADER
+    doc.setFillColor(106,17,203);
+    doc.rect(0,0,210,30,'F');
+
+    doc.setTextColor(255,255,255);
+    doc.setFontSize(20);
+    doc.text("Sales Data Analysis System",20,15);
+
+    doc.setFontSize(12);
+    doc.text("Project Report",20,25);
+
+    doc.setTextColor(0,0,0);
+
+    // KEY METRICS
+    doc.setFontSize(16);
+    doc.text("KEY METRICS",20,50);
+
+    doc.setFontSize(13);
+
+    doc.text("Total Sales : Rs. 15,20,000",20,65);
+    doc.text("Total Orders : 500",20,78);
+    doc.text("Top Product : Laptop",20,91);
+    doc.text("Top Region : West",20,104);
+    doc.text("Average Order Value : Rs. 3040",20,117);
+    doc.text("Growth Rate : 12%",20,130);
+
+    // KEY INSIGHTS
+    doc.setFontSize(16);
+    doc.text("KEY INSIGHTS",20,150);
+
+    doc.setFontSize(12);
+
+    doc.text("• Total sales reached Rs. 15,20,000 during the analysis period.",20,165);
+    doc.text("• Laptop emerged as the top-selling product category.",20,177);
+    doc.text("• West region generated the highest revenue contribution.",20,189);
+    doc.text("• Average order value was calculated as Rs. 3040.",20,201);
+    doc.text("• Monthly sales trend showed continuous growth.",20,213);
+
+    // BUSINESS SUMMARY
+    doc.setFontSize(16);
+    doc.text("BUSINESS SUMMARY",20,235);
+
+    doc.setFontSize(11);
+
+    const summary = doc.splitTextToSize(
+        "The sales analysis indicates a positive growth trend across the observed period. Monthly sales performance showed consistent improvement and increasing customer demand. Product-wise analysis revealed that Laptop was the highest-performing product category. Regional analysis highlighted the West region as the top revenue-generating area. Overall, the business demonstrated stable growth and strong product performance.",
+        170
+    );
+
+    doc.text(summary,20,248);
+
+    // DEVELOPED BY
+    doc.setFontSize(12);
+    doc.text("Developed By : Mitali Chitranshi",20,285);
+
+    doc.save("Sales_Report.pdf");
+}
+</script>
+
+<body>
+
+   
+    <!-- DASHBOARD -->
+    
+
+    <div class="dashboard">
+
+        <h1 class="main-title">
+            Sales Data Analysis Dashboard
+        </h1>
+
+        <div class="title-line"></div>
+
+    </div>
+
+    
+    
+   
+
+    <div class="dashboard-button-section">
+
+    <h3>View Live Power BI Dashboard</h3>
+
+    <p>
+        Click the button below to open the interactive Power BI dashboard.
+    </p>
+
+    <button onclick="window.open('https://app.powerbi.com/groups/me/reports/c4160691-4b52-4b13-a4c5-defd83306fc1/dcd0184eea6e3e09eb18?experience=power-bi')">
+        📊 Open Live Dashboard
+    </button>
+
+
+
+ 
+
+
+
+</div>
+           <div class="btn-container">
+    <button class="download-btn" onclick="downloadPDF()">
+        📄 Download Report
+    </button>
+</div>
+
+    <!-- CONTENT SECTION -->
+    
+    <div class="content-section">
+
+        <!-- SUMMARY BOX -->
+
+        <div class="summary-box">
+
+            <h2 class="summary-title">
+                Sales Report Summary
+            </h2>
+
+            <div class="summary-design">
+                <div class="line"></div>
+                <div class="dot"></div>
+                <div class="line"></div>
+            </div>
+
+            <!-- POINT 1 -->
+
+            <div class="summary-point">
+
+                <div class="summary-icon">📊</div>
+
+                <div class="summary-text">
+                    The dataset contains sales records including
+                    product categories, order details, revenue,
+                    quantity, and regional sales information.
+                </div>
+
+            </div>
+
+            <!-- POINT 2 -->
+
+            <div class="summary-point">
+
+                <div class="summary-icon">🐍</div>
+
+                <div class="summary-text">
+                    Data preprocessing was performed using Python
+                    to handle missing values, clean date formats,
+                    and calculate revenue-based insights.
+                </div>
+
+            </div>
+
+            <!-- POINT 3 -->
+
+            <div class="summary-point">
+
+                <div class="summary-icon">📈</div>
+
+                <div class="summary-text">
+                    Monthly sales showed continuous growth in the
+                    <span class="highlight">
+                        electronics category
+                    </span>.
+                </div>
+
+            </div>
+
+            <!-- POINT 4 -->
+
+            <div class="summary-point">
+
+                <div class="summary-icon">🌍</div>
+
+                <div class="summary-text">
+                    Certain regions generated higher overall
+                    revenue compared to other regions.
+                </div>
+
+            </div>
+
+            <!-- POINT 5 -->
+
+            <div class="summary-point">
+
+                <div class="summary-icon">💡</div>
+
+                <div class="summary-text">
+                    The dashboard helps businesses understand
+                    customer purchasing patterns and improve
+                    business decision-making.
+                </div>
+
+            </div>
+
+        </div>
+
+        
+        <!-- INSIGHTS -->
+
+        <div class="insights-section">
+
+            <h2 class="insight-title">
+                Key Insights
+            </h2>
+
+            <div class="insight-design">
+                <div class="line"></div>
+                <div class="dot"></div>
+                <div class="line"></div>
+            </div>
+
+            <!-- INSIGHT CARDS -->
+
+            <div class="insight-container">
+
+                <!-- CARD 1 -->
+
+                <div class="insight-card">
+
+                    <div class="insight-card-icon">📈</div>
+
+                    <p>
+                        Total sales increased in
+                        <span class="highlight">
+                            electronics
+                        </span>
+                        category.
+                    </p>
+
+                </div>
+
+                <!-- CARD 2 -->
+
+                <div class="insight-card">
+
+                    <div class="insight-card-icon">📍</div>
+
+                    <p>
+                        <span class="highlight">
+                            West region
+                        </span>
+                        generated the highest revenue.
+                    </p>
+
+                </div>
+
+                <!-- CARD 3 -->
+
+                <div class="insight-card">
+
+                    <div class="insight-card-icon">📊</div>
+
+                    <p>
+                        Monthly sales showed
+                        <span class="highlight">
+                            continuous growth
+                        </span>.
+                    </p>
+
+                </div>
+
+                <!-- CARD 4 -->
+
+                <div class="insight-card">
+
+                    <div class="insight-card-icon">🏆</div>
+
+                    <p>
+                        Top products contributed to
+                        <span class="highlight">
+                            maximum profit
+                        </span>.
+                    </p>
+
+                </div>
+
+                <!-- CARD 5 -->
+
+                <div class="insight-card">
+
+                    <div class="insight-card-icon">🛒</div>
+
+                    <p>
+                        Steady increase in
+                        <span class="highlight">
+                            order quantity
+                        </span>
+                        over the years.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <a href="index.html" class="back-btn">
+⬅ Back To Dashboard
+</a>
+
+
+        <script>
+
+
+window.addEventListener("pageshow", function () {
+    document.getElementById("csvFile").value = "";
+});
+
+document.getElementById("csvFile").addEventListener("change", function(){
+
+    let file = this.files[0];
+
+    if(file){
+
+        document.getElementById("fileStatus").innerHTML =
+        "✅ File Uploaded Successfully : " + file.name;
+
+        document.getElementById("fileStatus").style.color = "green";
+        document.getElementById("fileStatus").style.fontWeight = "bold";
+
+        setTimeout(function(){
+            window.location.href = "insights.html";
+        },1000);
+
+    }
+
+});
+
+
+</script>
+
+
+   <footer>
+        Developed by Mitali Chitranshi | MCA Major Project
+    </footer>
+    </div>
+
+</body>
+
+</html>
